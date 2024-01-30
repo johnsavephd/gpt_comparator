@@ -1,4 +1,4 @@
 # gpt_comparator_requirements
 
-openai
+openai==0.28.0
 streamlit
