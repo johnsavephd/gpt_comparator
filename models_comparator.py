@@ -14,7 +14,7 @@ with st.sidebar:
     top_p = st.slider(":bar_chart: **Top-P**", min_value=0.01, max_value=1.0, value=1.0, help = "An **alternative** to sampling with temperature where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. Do not use combined with high temperature.")
     max_tokens = st.slider(":scroll: **Max Tokens**", min_value= 32, max_value= 4096, value =1024, help = "The maximum number of tokens that can be generated.")
 
-openai.api_key = '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'
+openai.api_key = st.secrets.openai_key
 
 st.title("💬 Which GPT Model should I use? (Beta)")
 "#"
