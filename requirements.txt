@@ -1,1 +1,5 @@
-# gpt_comparator
+# gpt_comparator_requirements
+
+openai
+streamlit
+os
