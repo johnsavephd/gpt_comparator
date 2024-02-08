@@ -124,12 +124,12 @@ def main():
           
   #--------------------------Title--------------------------
       
-  col1, mid, col2 = st.columns([1,1,30])
-  with col1:
+  #col1, mid, col2 = st.columns([1,1,30])
+  #with col1:
     
-    st.image('https://dwglogo.com/wp-content/uploads/2019/03/1600px-OpenAI_logo.png', width=80)
-  with col2:
-      st.title('Which GPT Model should I use?')
+  #  st.image('https://dwglogo.com/wp-content/uploads/2019/03/1600px-OpenAI_logo.png', width=80)
+  #with col2:
+  st.title('Which GPT Model should I use?')
 
   #-------------------------Main Section-------------------------
       
