@@ -2,7 +2,7 @@
 #-------------------------Import libraries-------------------------
 import streamlit as st
 import openai
-import psycopg2-binary as pg
+import psycopg2 as pg
 #--------------------------OpenAI API Key--------------------------
 
 openai.api_key = st.secrets.openai_key
