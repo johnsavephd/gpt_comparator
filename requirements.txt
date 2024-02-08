@@ -3,3 +3,4 @@
 openai==0.28.0
 streamlit
 psycopg2
+psycopg2-binary
