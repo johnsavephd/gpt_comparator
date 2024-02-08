@@ -2,7 +2,7 @@
 #-------------------------Import libraries-------------------------
 import streamlit as st
 import openai
-import psycopg2
+import psycopg2-binary as pg
 #--------------------------OpenAI API Key--------------------------
 
 openai.api_key = st.secrets.openai_key
@@ -45,7 +45,7 @@ def set_up_values():
 def write_postgres(user_query, system_role, temperature, top_p, max_tokens, model_1, model_2, model_3, answer_1, answer_2, answer_3, token_1, token_2, token_3, love_1, love_2, love_3):
 
   try:
-    conn = psycopg2.connect(
+    conn = pg.connect(
       host=st.secrets.host,
       database=st.secrets.database,
       user=st.secrets.user,
