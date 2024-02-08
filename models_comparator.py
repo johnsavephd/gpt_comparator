@@ -1,6 +1,5 @@
 
 #-------------------------Import libraries-------------------------
-import time
 import streamlit as st
 import openai
 import psycopg2
