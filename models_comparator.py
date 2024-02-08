@@ -127,7 +127,7 @@ def main():
   col1, mid, col2 = st.columns([1,1,30])
   with col1:
     "#"  
-    st.image('https://static-00.iconduck.com/assets.00/openai-icon-2021x2048-4rpe5x7n.png', width=50)
+    st.image('https://dwglogo.com/wp-content/uploads/2019/03/1600px-OpenAI_logo.png', width=50)
   with col2:
       st.title('Which GPT Model should I use?')
 
