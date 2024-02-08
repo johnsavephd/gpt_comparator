@@ -1,12 +1,13 @@
 
 #-------------------------Import libraries-------------------------
+
 import streamlit as st
 import openai
 import psycopg2 as pg
+
 #--------------------------OpenAI API Key--------------------------
 
 openai.api_key = st.secrets.openai_key
-
 
 #------------------------Page configuration------------------------
 
@@ -97,8 +98,6 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
   st.session_state.gpt41love = False
   st.session_state.prompt = ""
 
-  
-  
 #--------------------------Sidebar Section-------------------------
 
 def main():
@@ -127,7 +126,7 @@ def main():
       
   col1, mid, col2 = st.columns([1,1,30])
   with col1:
-      st.image('https://static-00.iconduck.com/assets.00/openai-icon-2021x2048-4rpe5x7n.png', width=80)
+      st.image('https://static-00.iconduck.com/assets.00/openai-icon-2021x2048-4rpe5x7n.png', width=60)
   with col2:
       st.title('Which GPT Model should I use?')
 
@@ -152,8 +151,6 @@ def main():
       gpt40_125 = ask_function("gpt-4-0125-preview", context, prompt, temperature, top_p, max_tokens)
       answer_gpt40_125 = gpt40_125.choices[0].message
       tokens_gpt40_125 = gpt40_125["usage"]["completion_tokens"]
-
-   
 
     col1, col2, col3 = st.columns(3)
 
@@ -193,7 +190,6 @@ def main():
       st.info(answer_gpt40['content'], icon=None)
       st.checkbox(key = "gpt40love", label="I prefer GPT-4 answer", on_change = write_postgres, args=(prompt, context, temperature, top_p, max_tokens, model_1, model_2, model_3, answer_gpt35['content'], answer_gpt40['content'], answer_gpt40_125['content'], tokens_gpt35, tokens_gpt40, tokens_gpt40_125, False, True, False,))
 
-
     with col3:
       st.header("**gpt-4-0125-preview**")
       ":boom: 128.000 Tokens | :calendar: Up to Apr 2023"
@@ -209,8 +205,6 @@ def main():
         "#"  
       st.info(answer_gpt40_125['content'], icon=None)
       st.checkbox(key = "gpt41love", label="I prefer gpt-4-0125-preview answer", on_change = write_postgres, args=(prompt, context, temperature, top_p, max_tokens, model_1, model_2, model_3, answer_gpt35['content'], answer_gpt40['content'], answer_gpt40_125['content'], tokens_gpt35, tokens_gpt40, tokens_gpt40_125, False, False, True,))
-
-
 
       with tabInfo:
    
