@@ -2,8 +2,6 @@
 #-------------------------Import libraries-------------------------
 import time
 import streamlit as st
-from streamlit_pills import pills
-from streamlit_star_rating import st_star_rating
 import openai
 import psycopg2
 #--------------------------OpenAI API Key--------------------------
