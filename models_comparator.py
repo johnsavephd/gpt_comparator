@@ -49,7 +49,7 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
       host=st.secrets.host,
       database=st.secrets.database,
       user=st.secrets.user,
-      password=st.secrets.pass
+      password=st.secrets.mypassword
   )
     cur = conn.cursor()
 
