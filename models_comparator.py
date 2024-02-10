@@ -129,7 +129,7 @@ def main():
     
   #  st.image('https://dwglogo.com/wp-content/uploads/2019/03/1600px-OpenAI_logo.png', width=80)
   #with col2:
-  st.title('Which GPT should I use in my application? dwewecw')
+  st.title('Which GPT should I use in my application?')
 
   #-------------------------Main Section-------------------------
       
