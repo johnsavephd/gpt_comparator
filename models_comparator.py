@@ -75,7 +75,6 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
       love_3,
       create_time
     
-   
       ) 
       VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP)"""
     
@@ -174,8 +173,6 @@ def main():
       st.info(answer_gpt35['content'], icon=None)
       st.checkbox(key = "gpt35love", label="I prefer GPT-3.5-turbo answer", on_change = write_postgres, args=(prompt, context, temperature, top_p, max_tokens, model_1, model_2, model_3, answer_gpt35['content'], answer_gpt40['content'], answer_gpt40_125['content'], tokens_gpt35, tokens_gpt40, tokens_gpt40_125, True, False, False,))
       
-    
-      
     with col2:
       st.header("**gpt-4**")
       ":boom: 8.192 Tokens | :calendar: Up to Sep 2021"
@@ -220,10 +217,6 @@ def main():
         st.divider()
         st.subheader("Send me feedbacks :exclamation:")
         st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
-  
-        
-      
-
 
 if __name__ == '__main__':
     main()
