@@ -37,7 +37,7 @@ def ask_function(model, context, prompt, temperature, top_p, max_tokens):
   return completion
 
 def set_up_values():
-    st.session_state.context = "You are an helpful assistant wrehfui3rfun"
+    st.session_state.context = "You are an helpful assistant"
     st.session_state.prompt = ""
     st.session_state.temperature = 0.8
     st.session_state.top_p = 1
@@ -129,7 +129,7 @@ def main():
     
   #  st.image('https://dwglogo.com/wp-content/uploads/2019/03/1600px-OpenAI_logo.png', width=80)
   #with col2:
-  st.title('Which GPT should I use in my application?')
+  st.title('Which GPT should I use in my application? dwewecw')
 
   #-------------------------Main Section-------------------------
       
