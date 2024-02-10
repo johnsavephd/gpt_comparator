@@ -166,7 +166,7 @@ def main():
       with cola:
         st.metric(":boom: Tokens", value = str(tokens_gpt35)+"T", help = "Tokens can be thought of as pieces of words. This number refers to *completion tokens*. You should be aware also of *prompt tokens* when evaluating full costs.")
       with colb:
-        st.metric(":money_with_wings: Cost", value = str(round(tokens_gpt35*0.002,2))+"$", help ="Cost in $ per 1 thousand operations.")
+        st.metric(":money_with_wings: Cost", value = str(round(tokens_gpt35*0.0015,2))+"$", help ="Cost in $ per 1 thousand operations.")
       with colc:
         "#"
       
