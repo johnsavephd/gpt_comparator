@@ -106,13 +106,13 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
 #--------------------------Temporaty Storing-------------------------
 
 if 'love_1_list' not in st.session_state:
-  st.session_state['love_1_list'] = []
+  st.session_state['love_1_list'] = [0]
 
 if 'love_2_list' not in st.session_state:
-  st.session_state['love_2_list'] = []
+  st.session_state['love_2_list'] = [0]
 
 if 'love_3_list' not in st.session_state:
-  st.session_state['love_3_list'] = []
+  st.session_state['love_3_list'] = [0]
 
 #--------------------------Sidebar Section-------------------------
 
