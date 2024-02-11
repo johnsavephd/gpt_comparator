@@ -224,23 +224,21 @@ def main():
         st.subheader("Send me feedbacks :exclamation:")
         st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
 
-        import numpy as np
-        import time
+        if 'my_lst' not in st.session_state:
+            st.session_state['my_lst'] = []
         
-        # Get some data.
-        data = np.random.randn(10, 2)
-        
-        # Show the data as a chart.
-        chart = st.line_chart(data)
-        
-        # Wait 1 second, so the change is clearer.
-        time.sleep(1)
-        
-        # Grab some more data.
-        data2 = np.random.randn(10, 2)
-        
-        # Append the new data to the existing chart.
-        chart.add_rows(data2)
+        def manager():
+            with st.expander("Example"):
+                user_input = st.text_input("Enter a key")
+                add_button = st.button("Add", key='add_button')
+                if add_button:
+                    if len(user_input) > 0:
+                        st.session_state['my_lst'] += [user_input]
+                        st.write( st.session_state['my_lst'] )
+                    else:
+                        st.warning("Enter text")
+
+        manager()
 
 if __name__ == '__main__':
     main()
