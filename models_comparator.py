@@ -224,7 +224,7 @@ def main():
         st.subheader("Send me feedbacks :exclamation:")
         st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
 
-        st.write(st.session_state['my_lst'])
+        st.write(sum(st.session_state['my_lst']))
 
 if __name__ == '__main__':
     main()
