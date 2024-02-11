@@ -15,7 +15,7 @@ st.set_page_config(page_title="GPT Comparator", page_icon="🤖", layout="wide")
 
 #------------------------Model Selection----------------------
 
-model_1 = "gpt-3.5-turbo"
+model_1 = "gpt-3.5-turbo-0125"
 model_2 = "gpt-4"
 model_3 = "gpt-4-0125-preview"
 
@@ -137,8 +137,8 @@ def main():
 
   with tabMain:
     
-    with st.spinner("Generating with gpt-3.5-turbo ..."):
-      gpt35 = ask_function("gpt-3.5-turbo", context, prompt, temperature, top_p, max_tokens)
+    with st.spinner("Generating with gpt-3.5-turbo-0125 ..."):
+      gpt35 = ask_function("gpt-3.5-turbo-0125", context, prompt, temperature, top_p, max_tokens)
       answer_gpt35 = gpt35.choices[0].message
       tokens_gpt35 = gpt35["usage"]["completion_tokens"]
      
@@ -156,10 +156,10 @@ def main():
     col1, col2, col3 = st.columns(3)
 
     with col1:
-      st.header("**gpt-3.5-turbo**")
-      ":boom: 4.096 Tokens | :calendar: Up to Sep 2021"
+      st.header("**gpt-3.5-turbo-0125**")
+      ":boom: 16.385 Tokens | :calendar: Up to Sep 2021"
 
-      st.markdown("Snapshot of GPT-3.5-turbo from June 13th 2023. Best in terms of performance-cost ratio for simple textual tasks")
+      st.markdown("The latest GPT-3.5 Turbo model with higher accuracy at responding in requested formats")
       st.link_button("Model", url="https://platform.openai.com/docs/models/gpt-3-5", help=None, type="secondary", disabled=False, use_container_width=False)
 
       cola, colb, colc = st.columns(3)
