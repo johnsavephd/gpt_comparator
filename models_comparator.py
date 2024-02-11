@@ -237,6 +237,21 @@ def main():
         love_2_perc = sum(st.session_state['love_2_list']) / max(sum(st.session_state['love_1_list'])+sum(st.session_state['love_2_list'])+sum(st.session_state['love_3_list']),1)
         love_3_perc = sum(st.session_state['love_3_list']) / max(sum(st.session_state['love_1_list'])+sum(st.session_state['love_2_list'])+sum(st.session_state['love_3_list']),1)
 
+        import matplotlib.pyplot as plt
+        
+        # Dati
+        labels = ['Lista 1', 'Lista 2', 'Lista 3']
+        sizes = [love_1_perc, love_2_perc, love_3_perc]
+        
+        # Creazione del diagramma a torta
+        plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+        
+        # Aggiunta di un titolo
+        plt.title('Proporzioni di valori True nelle liste')
+        
+        # Mostra il diagramma
+        plt.show()
+
 
 if __name__ == '__main__':
     main()
