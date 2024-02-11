@@ -159,14 +159,14 @@ def main():
       st.header("**gpt-3.5-turbo-0125**")
       ":boom: 16.385 Tokens | :calendar: Up to Sep 2021"
 
-      st.markdown("The latest GPT-3.5 Turbo model with higher accuracy at responding in requested formats")
+      st.markdown("The latest GPT-3.5 Turbo model with higher accuracy at responding in requested formats (working for non-chat tasks as well)")
       st.link_button("Model", url="https://platform.openai.com/docs/models/gpt-3-5", help=None, type="secondary", disabled=False, use_container_width=False)
 
       cola, colb, colc = st.columns(3)
       with cola:
-        st.metric(":boom: Tokens", value = str(tokens_gpt35)+"T", help = "Tokens can be thought of as pieces of words. This number refers to *completion tokens*. You should be aware also of *prompt tokens* when evaluating full costs.")
+        st.metric(":boom: Tokens", value = str(tokens_gpt35)+"T", help = "Tokens can be thought of as pieces of words. This number refers to *completion tokens*. You should be aware also of *prompt tokens* when evaluating full costs")
       with colb:
-        st.metric(":money_with_wings: Cost", value = str(round(tokens_gpt35*0.0015,2))+"$", help ="Cost in $ per 1 thousand operations.")
+        st.metric(":money_with_wings: Cost", value = str(round(tokens_gpt35*0.0015,2))+"$", help ="Cost in $ per 1 thousand operations")
       with colc:
         "#"
       
@@ -181,9 +181,9 @@ def main():
       st.link_button("Model", url="https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo", help=None, type="secondary", disabled=False, use_container_width=False)
       colg, colh, coli = st.columns(3)
       with colg:
-        st.metric(":boom: Tokens", value = str(tokens_gpt40)+"T", help = "Tokens can be thought of as pieces of words. This number refers to *completion tokens*. You should be aware also of *prompt tokens* when evaluating full costs.")
+        st.metric(":boom: Tokens", value = str(tokens_gpt40)+"T", help = "Tokens can be thought of as pieces of words. This number refers to *completion tokens*. You should be aware also of *prompt tokens* when evaluating full costs")
       with colh:
-        st.metric(":money_with_wings: Cost", value =str(round(tokens_gpt40*0.06,2))+"$", help ="Cost in $ per 1 thousand operations.")
+        st.metric(":money_with_wings: Cost", value =str(round(tokens_gpt40*0.06,2))+"$", help ="Cost in $ per 1 thousand operations")
       with coli:
         "#"  
       st.info(answer_gpt40['content'], icon=None)
@@ -197,9 +197,9 @@ def main():
       st.link_button("Model", url="https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo", help=None, type="secondary", disabled=False, use_container_width=False)
       cold, cole, colf = st.columns(3)
       with cold:
-        st.metric(":boom: Tokens", value = str(tokens_gpt40_125)+"T", help = "Tokens can be thought of as pieces of words. This number refers to *completion tokens*. You should be aware also of *prompt tokens* when evaluating full costs.")
+        st.metric(":boom: Tokens", value = str(tokens_gpt40_125)+"T", help = "Tokens can be thought of as pieces of words. This number refers to *completion tokens*. You should be aware also of *prompt tokens* when evaluating full costs")
       with cole:
-        st.metric(":money_with_wings: Cost", value =str(round(tokens_gpt40_125*0.03,2))+"$", help ="Cost in $ per 1 thousand operations.")
+        st.metric(":money_with_wings: Cost", value =str(round(tokens_gpt40_125*0.03,2))+"$", help ="Cost in $ per 1 thousand operations")
       with colf:
         "#"  
       st.info(answer_gpt40_125['content'], icon=None)
