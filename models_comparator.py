@@ -109,11 +109,11 @@ def main():
         st.markdown("Please fill in the following fields to configure GPT parameters and compare the results.")
         #api_key = st.text_input(label = ":key: **OpenAI API Key**", value="", placeholder= "Insert here your API Key", type = "password")
         
-        context = st.text_area(label = "🤖 **Role of the system**", key = "context", value="You are an helpful assistant", max_chars=250, placeholder= "You are an helpful assistant", help = "Set the role for the assistant. If you want, specify also the personality (ex: irriverent, funny).")
-        prompt = st.text_area(label = ":question: **Your Prompt**", key = "prompt", value="", max_chars=500, placeholder= "Insert here your prompt", help = "Type here an instruction in natural language." )
-        temperature = st.slider(":thermometer: **Temperature**", key = "temperature", min_value=0.0, max_value=2.0, value=0.8, help = "Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.")
-        top_p = st.slider(":bar_chart: **Top-P**", key = "top_p", min_value=0.01, max_value=1.0, value=1.0, help = "An **alternative** to sampling with temperature where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. Do not use combined with high temperature.")
-        max_tokens = st.slider(":scroll: **Max Tokens**", key = "max_tokens", min_value= 32, max_value= 1024, value = 1024, help = "The maximum number of tokens that can be generated. In this app they will be limited to 1024 for cost savings and performances")
+        context = st.text_area(label = "🤖 **Role of the system**", key = "context", value="You are an helpful assistant", max_chars=250, placeholder= "You are an helpful assistant", help = "Set the role of the system. If you want, specify also the personality (ex: irriverent, funny ...)")
+        prompt = st.text_area(label = ":question: **Your Prompt**", key = "prompt", value="", max_chars=500, placeholder= "Insert here your prompt", help = "Type here an instruction in natural language" )
+        temperature = st.slider(":thermometer: **Temperature**", key = "temperature", min_value=0.0, max_value=2.0, value=0.8, help = "Higher values, such as 0.8, will result in more random output, while lower values, like 0.2, will make it more focused and deterministic")
+        top_p = st.slider(":bar_chart: **Top-P**", key = "top_p", min_value=0.01, max_value=1.0, value=1.0, help = "An **alternative** to sampling with temperature where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. Do not use combined with high temperature")
+        max_tokens = st.slider(":scroll: **Max Tokens**", key = "max_tokens", min_value= 32, max_value= 1024, value = 1024, help = "The maximum number of tokens that can be generated. In this application they will be limited to 1024 for cost savings and performance reasons")
         
         co10, col11, col12, col9,col8 = st.columns([1,1,1,1,1])
 
