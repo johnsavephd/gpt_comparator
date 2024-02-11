@@ -237,22 +237,22 @@ def main():
         love_1_perc = sum(st.session_state['love_1_list']) / max(sum(st.session_state['love_1_list'])+sum(st.session_state['love_2_list'])+sum(st.session_state['love_3_list']),1)
         love_2_perc = sum(st.session_state['love_2_list']) / max(sum(st.session_state['love_1_list'])+sum(st.session_state['love_2_list'])+sum(st.session_state['love_3_list']),1)
         love_3_perc = sum(st.session_state['love_3_list']) / max(sum(st.session_state['love_1_list'])+sum(st.session_state['love_2_list'])+sum(st.session_state['love_3_list']),1)
-        #st.write(love_1_perc)
-        #st.write(love_2_perc)
-        #st.write(love_3_perc)
+        st.write(love_1_perc)
+        st.write(love_2_perc)
+        st.write(love_3_perc)
         
         
         
-        #labels = 'Frogs', 'Hogs', 'Dogs',
-        #sizes = [float(love_1_perc), float(love_2_perc), float(love_3_perc)]
+        labels = 'Frogs', 'Hogs', 'Dogs',
+        sizes = [float(love_1_perc), float(love_2_perc), float(love_3_perc)]
           
 
-        #fig1, ax1 = plt.subplots()
-        #ax1.pie(sizes, labels=labels, autopct='%1f%%',
-        #        shadow=False, startangle=90)
-        #ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+        fig1, ax1 = plt.subplots()
+        ax1.pie(sizes, labels=labels, autopct='%1f%%',
+                shadow=False, startangle=90)
+        ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
         
-        #st.pyplot(fig1)
+        st.pyplot(fig1)
 
 
     
