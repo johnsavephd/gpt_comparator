@@ -234,16 +234,15 @@ def main():
         st.subheader("Send me feedbacks :exclamation:")
         st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
 
-        love_1_perc = sum(st.session_state['love_1_list']) #/ max(sum(st.session_state['love_1_list'])+sum(st.session_state['love_2_list'])+sum(st.session_state['love_3_list']),1)
-        love_2_perc = sum(st.session_state['love_2_list']) #/ max(sum(st.session_state['love_1_list'])+sum(st.session_state['love_2_list'])+sum(st.session_state['love_3_list']),1)
-        love_3_perc = sum(st.session_state['love_3_list']) #/ max(sum(st.session_state['love_1_list'])+sum(st.session_state['love_2_list'])+sum(st.session_state['love_3_list']),1)
+        love_1_perc = sum(st.session_state['love_1_list']) / max(sum(st.session_state['love_1_list'])+sum(st.session_state['love_2_list'])+sum(st.session_state['love_3_list']),1)
+        love_2_perc = sum(st.session_state['love_2_list']) / max(sum(st.session_state['love_1_list'])+sum(st.session_state['love_2_list'])+sum(st.session_state['love_3_list']),1)
+        love_3_perc = sum(st.session_state['love_3_list']) / max(sum(st.session_state['love_1_list'])+sum(st.session_state['love_2_list'])+sum(st.session_state['love_3_list']),1)
         st.write(love_1_perc)
         st.write(love_2_perc)
         st.write(love_3_perc)
+
         
-        
-        
-        labels = 'Frogs', 'Hogs', 'Dogs',
+        labels = "gpt-3.5-turbo-0125", "gpt-4", "gpt-4-0125-preview"
         sizes = [float(love_1_perc), float(love_2_perc), float(love_3_perc)]
           
 
