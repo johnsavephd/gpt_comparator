@@ -100,8 +100,14 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
 
 #--------------------------Temporaty Storing-------------------------
 
-if 'my_lst' not in st.session_state:
-  st.session_state['my_lst'] = []
+if 'love_1' not in st.session_state:
+  st.session_state['love_1'] = []
+
+if 'love_2' not in st.session_state:
+  st.session_state['love_2'] = []
+
+if 'love_3' not in st.session_state:
+  st.session_state['love_3'] = []
 
 
 #--------------------------Sidebar Section-------------------------
@@ -224,7 +230,26 @@ def main():
         st.subheader("Send me feedbacks :exclamation:")
         st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
 
-        st.write(sum(st.session_state['my_lst']))
+        love_1_perc = sum(st.session_state['love_1']) / (sum(st.session_state['love_1']) + sum(st.session_state['love_2'])+ sum(st.session_state['love_3']))
+        love_2_perc = sum(st.session_state['love_2']) / (sum(st.session_state['love_1']) + sum(st.session_state['love_2'])+ sum(st.session_state['love_3']))
+        love_3_perc = sum(st.session_state['love_3']) / (sum(st.session_state['love_1']) + sum(st.session_state['love_2'])+ sum(st.session_state['love_3']))
+
+        import matplotlib.pyplot as plt
+        
+        # Dati
+        labels = ['Lista 1', 'Lista 2', 'Lista 3']
+        sizes = [love_1_perc, love_2_perc, love_3_perc]
+        
+        # Creazione del diagramma a torta
+        plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+        
+        # Aggiunta di un titolo
+        plt.title('Proporzioni di valori True nelle liste')
+        
+        # Mostra il diagramma
+        plt.show()
+
+
 
 if __name__ == '__main__':
     main()
