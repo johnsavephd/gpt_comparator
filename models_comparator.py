@@ -240,9 +240,20 @@ def main():
         st.write(love_1_perc)
         st.write(love_2_perc)
         st.write(love_3_perc)
-        sizes = [float(love_1_perc), float(love_2_perc), float(love_3_perc)]
+        
         st.write(sizes)
         fig1 = plt.pie(sizes)
+        st.pyplot(fig1)
+        
+        labels = 'Frogs', 'Hogs', 'Dogs',
+        sizes = [float(love_1_perc), float(love_2_perc), float(love_3_perc)]
+          
+
+        fig1, ax1 = plt.subplots()
+        ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
+                shadow=True, startangle=90)
+        ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+        
         st.pyplot(fig1)
 
 
