@@ -225,7 +225,7 @@ def main():
         st.subheader("Send me feedbacks :exclamation:")
         st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
 
-        love_1_perc = sum(st.session_state['love_1_list']) 
+        love_1_perc = sum(st.session_state['love_1_list']) / sum(st.session_state['love_1_list'])
         st.write(love_1_perc)
    
                                                               
