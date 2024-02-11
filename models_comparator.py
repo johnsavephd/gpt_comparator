@@ -258,7 +258,7 @@ def main():
       
       with tabInfo:
    
-        st.subheader("Why this application :question:")
+        st.header("Why this application :question:")
         st.markdown("Are you a **developer** looking for **integrating a GPT model** in your application? Have you ever wondered what the main differences are among them? Choosing the right model can be a bit overwhelming. Use this application to compare the results from different models and see the differences for yourself. Yes, but **make sure to check out the documentation** afterward! 😊")
         
         st.write("**1)** Type your prompt, set up role system and gpt parameters :pencil:")
@@ -266,7 +266,7 @@ def main():
         st.write("**3)** Choose the answer you prefer. A new answer will be displayed :round_pushpin:")
         st.info("Please be aware that your queries will be stored anonymously for research and training purposes. Under no circumstances should you insert confidential information.", icon = "⚠️")
         st.divider()
-        st.subheader("Send me feedbacks :exclamation:")
+        st.header("Send me feedbacks :exclamation:")
         st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
 
     
