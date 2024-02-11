@@ -149,7 +149,7 @@ def main():
 
   #-------------------------Main Section-------------------------
       
-  tabMain, tabStat, tabInfo = st.tabs(["Main", "Stat", "Info"])
+  tabMain, tabStat = st.tabs(["Main", "Stat&Info"])
 
   with tabMain:
     
@@ -236,8 +236,6 @@ def main():
           st.subheader("Send me feedbacks :exclamation:")
           st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
 
-
-        
         with coln:
           st.subheader("Your preferences")
           love_1_perc = sum(st.session_state['love_1_list']) 
@@ -254,8 +252,6 @@ def main():
             ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
             
             st.pyplot(fig1)
-
-
 
 if __name__ == '__main__':
     main()
