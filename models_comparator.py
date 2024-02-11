@@ -106,7 +106,7 @@ def main():
       with st.form(key='gpt_parameters', border = False):
         
         st.header(" GPT Parameters Set-up")
-        st.markdown("Please, fulfill the following fields to compare GPTs' results and choose the right model.")
+        st.markdown("Please fill in the following fields to configure GPT parameters and compare the results.")
         #api_key = st.text_input(label = ":key: **OpenAI API Key**", value="", placeholder= "Insert here your API Key", type = "password")
         
         context = st.text_area(label = "🤖 **Role of the system**", key = "context", value="You are an helpful assistant", max_chars=250, placeholder= "You are an helpful assistant", help = "Set the role for the assistant. If you want, specify also the personality (ex: irriverent, funny).")
