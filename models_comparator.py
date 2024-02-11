@@ -91,7 +91,7 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
   finally:
     cur.close()
     conn.close()
-
+  st.session_state['my_lst'] += [love_1]
   st.session_state.gpt35love = False
   st.session_state.gpt40love = False
   st.session_state.gpt41love = False
@@ -100,9 +100,9 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
 
 #--------------------------Temporaty Storing-------------------------
 
-love_1_array = []
-love_2_array = []
-love_3_array = []
+if 'my_lst' not in st.session_state:
+  st.session_state['my_lst'] = []
+
 
 #--------------------------Sidebar Section-------------------------
 
@@ -224,21 +224,7 @@ def main():
         st.subheader("Send me feedbacks :exclamation:")
         st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
 
-        if 'my_lst' not in st.session_state:
-            st.session_state['my_lst'] = []
-        
-        def manager():
-            with st.expander("Example"):
-                user_input = st.text_input("Enter a key")
-                add_button = st.button("Add", key='add_button')
-                if add_button:
-                    if len(user_input) > 0:
-                        st.session_state['my_lst'] += [user_input]
-                        st.write( st.session_state['my_lst'] )
-                    else:
-                        st.warning("Enter text")
-
-        manager()
+        st.write( st.session_state['my_lst']
 
 if __name__ == '__main__':
     main()
