@@ -237,7 +237,7 @@ def main():
           st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
 
         with coln:
-          st.subheader("Your preferences")
+          st.subheader("Your preferences :thumbsup::thumbsdown:")
           love_1_perc = sum(st.session_state['love_1_list']) 
           love_2_perc = sum(st.session_state['love_2_list']) 
           love_3_perc = sum(st.session_state['love_3_list']) 
