@@ -242,6 +242,7 @@ def main():
         st.write(love_3_perc)
         sizes = [love_1_perc, love_2_perc, love_3_perc]
         plt.pie(sizes, autopct='%1.1f%%', startangle=90)
+        plt.show()
     
 
 
