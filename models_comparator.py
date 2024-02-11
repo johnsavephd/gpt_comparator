@@ -91,7 +91,11 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
   finally:
     cur.close()
     conn.close()
-  st.session_state['my_lst'] += [love_1]
+    
+  st.session_state['love_1'] += [love_1]
+  st.session_state['love_2'] += [love_2]
+  st.session_state['love_3'] += [love_3]
+  
   st.session_state.gpt35love = False
   st.session_state.gpt40love = False
   st.session_state.gpt41love = False
