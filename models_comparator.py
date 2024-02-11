@@ -98,6 +98,12 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
   #st.session_state.prompt = ""
   #st.session_state.context = "You are an helpful assistant"
 
+#--------------------------Temporaty Storing-------------------------
+
+love_1_array = []
+love_2_array = []
+love_3_array = []
+
 #--------------------------Sidebar Section-------------------------
 
 def main():
@@ -138,18 +144,18 @@ def main():
   with tabMain:
     
     with st.spinner("Generating with gpt-3.5-turbo-0125 ..."):
-      gpt35 = ask_function("gpt-3.5-turbo-0125", context, prompt, temperature, top_p, max_tokens)
+      gpt35 = ask_function(model_1, context, prompt, temperature, top_p, max_tokens)
       answer_gpt35 = gpt35.choices[0].message
       tokens_gpt35 = gpt35["usage"]["completion_tokens"]
      
 
     with st.spinner("Generating with gpt-4 ..."):
-      gpt40 = ask_function("gpt-4", context, prompt, temperature, top_p, max_tokens)
+      gpt40 = ask_function(model_2, context, prompt, temperature, top_p, max_tokens)
       answer_gpt40 = gpt40.choices[0].message
       tokens_gpt40 = gpt40["usage"]["completion_tokens"]
 
     with st.spinner("Generating with gpt-4-0125-preview..."):
-      gpt40_125 = ask_function("gpt-4-0125-preview", context, prompt, temperature, top_p, max_tokens)
+      gpt40_125 = ask_function(model_3, context, prompt, temperature, top_p, max_tokens)
       answer_gpt40_125 = gpt40_125.choices[0].message
       tokens_gpt40_125 = gpt40_125["usage"]["completion_tokens"]
 
@@ -217,6 +223,24 @@ def main():
         st.divider()
         st.subheader("Send me feedbacks :exclamation:")
         st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
+
+        import numpy as np
+        import time
+        
+        # Get some data.
+        data = np.random.randn(10, 2)
+        
+        # Show the data as a chart.
+        chart = st.line_chart(data)
+        
+        # Wait 1 second, so the change is clearer.
+        time.sleep(1)
+        
+        # Grab some more data.
+        data2 = np.random.randn(10, 2)
+        
+        # Append the new data to the existing chart.
+        chart.add_rows(data2)
 
 if __name__ == '__main__':
     main()
