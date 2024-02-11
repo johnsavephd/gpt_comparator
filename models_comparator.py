@@ -92,9 +92,7 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
     cur.close()
     conn.close()
     
-  st.session_state['love_1'] += [love_1]
-  st.session_state['love_2'] += [love_2]
-  st.session_state['love_3'] += [love_3]
+  st.session_state['love_1_list'] += [love_1]
   
   st.session_state.gpt35love = False
   st.session_state.gpt40love = False
@@ -104,15 +102,8 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
 
 #--------------------------Temporaty Storing-------------------------
 
-if 'love_1' not in st.session_state:
-  st.session_state['love_1'] = [0]
-
-if 'love_2' not in st.session_state:
-  st.session_state['love_2'] = [0]
-
-if 'love_3' not in st.session_state:
-  st.session_state['love_3'] = [0]
-
+if 'love_1_list' not in st.session_state:
+  st.session_state['love_1_list'] = []
 
 #--------------------------Sidebar Section-------------------------
 
@@ -234,24 +225,10 @@ def main():
         st.subheader("Send me feedbacks :exclamation:")
         st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
 
-        love_1_perc = sum(st.session_state['love_1']) / max((sum(st.session_state['love_1']) + sum(st.session_state['love_2'])+ sum(st.session_state['love_3'])),1)
-        love_2_perc = sum(st.session_state['love_2']) / max((sum(st.session_state['love_1']) + sum(st.session_state['love_2'])+ sum(st.session_state['love_3'])),1)
-        love_3_perc = sum(st.session_state['love_3']) / max((sum(st.session_state['love_1']) + sum(st.session_state['love_2'])+ sum(st.session_state['love_3'])),1)
-
-        import matplotlib.pyplot as plt
-        
-        # Dati
-        labels = ['Lista 1', 'Lista 2', 'Lista 3']
-        sizes = [love_1_perc, love_2_perc, love_3_perc]
-        
-        # Creazione del diagramma a torta
-        plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
-        
-        # Aggiunta di un titolo
-        plt.title('Proporzioni di valori True nelle liste')
-        
-        # Mostra il diagramma
-        plt.show()
+        love_1_perc = sum(st.session_state['love_1_list']) 
+        st.write(love_1_perc)
+   
+                                                              
 
 
 
