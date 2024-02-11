@@ -230,9 +230,9 @@ def main():
         st.subheader("Send me feedbacks :exclamation:")
         st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
 
-        love_1_perc = sum(st.session_state['love_1']) / (sum(st.session_state['love_1']) + sum(st.session_state['love_2'])+ sum(st.session_state['love_3']))
-        love_2_perc = sum(st.session_state['love_2']) / (sum(st.session_state['love_1']) + sum(st.session_state['love_2'])+ sum(st.session_state['love_3']))
-        love_3_perc = sum(st.session_state['love_3']) / (sum(st.session_state['love_1']) + sum(st.session_state['love_2'])+ sum(st.session_state['love_3']))
+        love_1_perc = sum(st.session_state['love_1']) / max((sum(st.session_state['love_1']) + sum(st.session_state['love_2'])+ sum(st.session_state['love_3'])),1)
+        love_2_perc = sum(st.session_state['love_2']) / max((sum(st.session_state['love_1']) + sum(st.session_state['love_2'])+ sum(st.session_state['love_3'])),1)
+        love_3_perc = sum(st.session_state['love_3']) / max((sum(st.session_state['love_1']) + sum(st.session_state['love_2'])+ sum(st.session_state['love_3'])),1)
 
         import matplotlib.pyplot as plt
         
