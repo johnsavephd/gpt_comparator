@@ -4,6 +4,7 @@
 import streamlit as st
 import openai
 import psycopg2 as pg
+import matplotlib.pyplot as plt
 
 #--------------------------OpenAI API Key--------------------------
 
@@ -239,6 +240,7 @@ def main():
         st.write(love_1_perc)
         st.write(love_2_perc)
         st.write(love_3_perc)
+        sizes = [love_1_perc, love_2_perc, love_3_perc]
     
 
 
