@@ -224,7 +224,7 @@ def main():
       with tabStat:
 
         colm,coln = st.columns(2)
-        with colm:
+        with coln:
           love_1_perc = sum(st.session_state['love_1_list']) 
           love_2_perc = sum(st.session_state['love_2_list']) 
           love_3_perc = sum(st.session_state['love_3_list']) 
