@@ -240,7 +240,8 @@ def main():
         st.write(love_1_perc)
         st.write(love_2_perc)
         st.write(love_3_perc)
-        sizes = [love_1_perc, love_2_perc, love_3_perc]
+        sizes = [float(love_1_perc), float(love_2_perc), float(love_3_perc)]
+        st.write(sizes)
 
     
 
