@@ -94,6 +94,7 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
     
   st.session_state['love_1_list'] += [love_1]
   st.session_state['love_2_list'] += [love_2]
+  st.session_state['love_3_list'] += [love_3]
   
   st.session_state.gpt35love = False
   st.session_state.gpt40love = False
@@ -108,6 +109,9 @@ if 'love_1_list' not in st.session_state:
 
 if 'love_2_list' not in st.session_state:
   st.session_state['love_2_list'] = []
+
+if 'love_3_list' not in st.session_state:
+  st.session_state['love_3_list'] = []
 
 #--------------------------Sidebar Section-------------------------
 
@@ -229,7 +233,7 @@ def main():
         st.subheader("Send me feedbacks :exclamation:")
         st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
 
-        love_1_perc = sum(st.session_state['love_1_list']) / max(sum(st.session_state['love_1_list'])+sum(st.session_state['love_2_list']),1)
+        love_1_perc = sum(st.session_state['love_1_list']) / max(sum(st.session_state['love_1_list'])+sum(st.session_state['love_2_list'])+sum(st.session_state['love_3_list']),1)
         st.write(love_1_perc)
    
                                                               
