@@ -245,13 +245,13 @@ def main():
         labels = "gpt-3.5-turbo-0125", "gpt-4", "gpt-4-0125-preview"
         sizes = [float(love_1_perc), float(love_2_perc), float(love_3_perc)]
           
-
-        fig1, ax1 = plt.subplots()
-        ax1.pie(sizes, labels=labels, autopct='%1f%%',
-                shadow=False, startangle=90)
-        ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-        
-        st.pyplot(fig1)
+        If love_1_perc + love_2_perc + love_3_perc > 0
+          fig1, ax1 = plt.subplots()
+          ax1.pie(sizes, labels=labels, autopct='%1f%%',
+                  shadow=False, startangle=90)
+          ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+          
+          st.pyplot(fig1)
 
 
     
