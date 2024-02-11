@@ -223,20 +223,22 @@ def main():
 
       with tabStat:
 
-        love_1_perc = sum(st.session_state['love_1_list']) 
-        love_2_perc = sum(st.session_state['love_2_list']) 
-        love_3_perc = sum(st.session_state['love_3_list']) 
-        
-        labels = "gpt-3.5-turbo-0125", "gpt-4", "gpt-4-0125-preview"
-        sizes = [float(love_1_perc), float(love_2_perc), float(love_3_perc)]
+        colm,coln = st.columns(2)
+        with colm:
+          love_1_perc = sum(st.session_state['love_1_list']) 
+          love_2_perc = sum(st.session_state['love_2_list']) 
+          love_3_perc = sum(st.session_state['love_3_list']) 
           
-        if love_1_perc + love_2_perc + love_3_perc > 0:
-          fig1, ax1 = plt.subplots()
-          ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
-                  shadow=False, startangle=90)
-          ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-          
-          st.pyplot(fig1)
+          labels = "gpt-3.5-turbo-0125", "gpt-4", "gpt-4-0125-preview"
+          sizes = [float(love_1_perc), float(love_2_perc), float(love_3_perc)]
+            
+          if love_1_perc + love_2_perc + love_3_perc > 0:
+            fig1, ax1 = plt.subplots()
+            ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
+                    shadow=False, startangle=90)
+            ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+            
+            st.pyplot(fig1)
 
       
       with tabInfo:
