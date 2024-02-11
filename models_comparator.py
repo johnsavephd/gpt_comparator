@@ -243,6 +243,7 @@ def main():
         sizes = [float(love_1_perc), float(love_2_perc), float(love_3_perc)]
         st.write(sizes)
         plt.pie(sizes)
+        plt.show()
 
 
     
