@@ -149,7 +149,7 @@ def main():
 
   #-------------------------Main Section-------------------------
       
-  tabMain, tabStat tabInfo = st.tabs(["Main", "Stat", "Info"])
+  tabMain, tabStat, tabInfo = st.tabs(["Main", "Stat", "Info"])
 
   with tabMain:
     
