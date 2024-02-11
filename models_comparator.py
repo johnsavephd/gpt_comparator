@@ -252,7 +252,7 @@ def main():
         #        shadow=False, startangle=90)
         #ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
         
-        s#t.pyplot(fig1)
+        #st.pyplot(fig1)
 
 
     
