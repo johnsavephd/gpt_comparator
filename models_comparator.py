@@ -20,6 +20,10 @@ model_1 = "gpt-3.5-turbo-0125"
 model_2 = "gpt-4"
 model_3 = "gpt-4-0125-preview"
 
+cost_1 = 0.0015 #https://openai.com/pricing
+cost_2 = 0.06
+cost_3 = 0.03
+
 #------------------------Function Definition-----------------------
 
 def ask_function(model, context, prompt, temperature, top_p, max_tokens):
@@ -96,6 +100,10 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
   st.session_state['love_1_list'] += [love_1]
   st.session_state['love_2_list'] += [love_2]
   st.session_state['love_3_list'] += [love_3]
+
+  st.session_state['token_1_list'] += [token_1]
+  st.session_state['token_2_list'] += [token_2]
+  st.session_state['token_3_list'] += [token_3]
   
   st.session_state.gpt35love = False
   st.session_state.gpt40love = False
@@ -113,6 +121,16 @@ if 'love_2_list' not in st.session_state:
 
 if 'love_3_list' not in st.session_state:
   st.session_state['love_3_list'] = [0]
+
+if 'token_1_list' not in st.session_state:
+  st.session_state['token_1_list'] = [0]
+
+if 'token_2_list' not in st.session_state:
+  st.session_state['token_2_list'] = [0]
+
+if 'token_3_list' not in st.session_state:
+  st.session_state['token_3_list'] = [0]
+
 
 #--------------------------Sidebar Section-------------------------
 
@@ -182,7 +200,7 @@ def main():
       with cola:
         st.metric(":boom: Tokens", value = str(tokens_gpt35)+"T", help = "Tokens can be thought of as pieces of words. This number refers to *completion tokens*. You should be aware also of *prompt tokens* when evaluating full costs")
       with colb:
-        st.metric(":money_with_wings: Cost", value = str(round(tokens_gpt35*0.0015,2))+"$", help ="Cost in $ per 1 thousand operations")
+        st.metric(":money_with_wings: Cost", value = str(round(tokens_gpt35*cost_1,2))+"$", help ="Cost in $ per 1 thousand operations")
       with colc:
         "#"
       
@@ -199,7 +217,7 @@ def main():
       with colg:
         st.metric(":boom: Tokens", value = str(tokens_gpt40)+"T", help = "Tokens can be thought of as pieces of words. This number refers to *completion tokens*. You should be aware also of *prompt tokens* when evaluating full costs")
       with colh:
-        st.metric(":money_with_wings: Cost", value =str(round(tokens_gpt40*0.06,2))+"$", help ="Cost in $ per 1 thousand operations")
+        st.metric(":money_with_wings: Cost", value =str(round(tokens_gpt40*cost_2,2))+"$", help ="Cost in $ per 1 thousand operations")
       with coli:
         "#"  
       st.info(answer_gpt40['content'], icon=None)
@@ -215,7 +233,7 @@ def main():
       with cold:
         st.metric(":boom: Tokens", value = str(tokens_gpt40_125)+"T", help = "Tokens can be thought of as pieces of words. This number refers to *completion tokens*. You should be aware also of *prompt tokens* when evaluating full costs")
       with cole:
-        st.metric(":money_with_wings: Cost", value =str(round(tokens_gpt40_125*0.03,2))+"$", help ="Cost in $ per 1 thousand operations")
+        st.metric(":money_with_wings: Cost", value =str(round(tokens_gpt40_125*cost_3,2))+"$", help ="Cost in $ per 1 thousand operations")
       with colf:
         "#"  
       st.info(answer_gpt40_125['content'], icon=None)
