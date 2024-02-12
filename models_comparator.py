@@ -298,8 +298,9 @@ def main():
           st.write("**4)** Iterate the process for few times :repeat:")
           st.write("**4)** Look at the statistics in the Stat tab :bar_chart:")
         with c2:
+          st.subheader("Pay attention to this :zap:")
           st.info("Please be aware that your queries will be stored anonymously for research and training purposes. Under no circumstances should you insert confidential information.", icon = "⚠️")
-          st.divider()
+        
           st.subheader("Send me feedbacks :exclamation:")
           st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
 
