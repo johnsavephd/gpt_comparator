@@ -265,7 +265,8 @@ def main():
 
         colm, coln = st.columns(2)
         with colm:
-          st.subheader("Average cost for 1000 query :money_with_wings:")
+          st.subheader("Average cost for 1.000 query :money_with_wings:")
+          st.markdown("Here you can compare costs you will sustain for 1.000 API call")
           #st.markdown("Are you a **developer** looking for **integrating a GPT model** in your application? Have you ever wondered what the main differences are among them? Choosing the right model can be a bit overwhelming. Use this application to compare the results from different models and see the differences for yourself. Yes, but **make sure to check out the documentation** afterward! 😊")
           
           #st.write("**1)** Type your prompt, set up role system and gpt parameters :pencil:")
