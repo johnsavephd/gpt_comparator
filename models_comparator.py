@@ -263,7 +263,7 @@ def main():
           #st.divider()
           #st.subheader("Send me feedbacks :exclamation:")
           #st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
-          plot_average(st.session_state['token_1_list'],st.session_state['token_2_list'],st.session_state['token_3_list'])
+          plot_average([st.session_state['token_1_list'],st.session_state['token_2_list'],st.session_state['token_3_list']])
 
         with coln:
           st.subheader("Your preferences :thumbsup::thumbsdown:")
