@@ -115,15 +115,25 @@ def plot_average(lists, cost_vector):
 
     # Create a bar chart
     fig, ax = plt.subplots()
-    ax.bar(range(len(lists)), weighted_averages, tick_label=[f'List {i+1}' for i in range(len(lists))])
-    plt.xlabel('Lists')
-    plt.ylabel('Weighted Average Value')
-    plt.title('Weighted Average Value for Each List')
+    bars = ax.bar(range(len(lists)), weighted_averages, tick_label=[f'List {i+1}' for i in range(len(lists))])
 
+    # Add labels to the bars
     for bar, value in zip(bars, weighted_averages):
         height = bar.get_height()
         ax.text(bar.get_x() + bar.get_width() / 2, height, f'{value:.2f}', ha='center', va='bottom')
 
+    # Remove the border
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['left'].set_visible(False)
+    ax.spines['bottom'].set_visible(False)
+
+    plt.xlabel('Lists')
+    plt.ylabel('Weighted Average Value')
+    plt.title('Weighted Average Value for Each List')
+    
+    # Display the plot without y-axis ticks
+    plt.tick_params(axis='y', which='both', left=False, right=False, labelleft=False)
     
     # Display the plot
     st.pyplot(fig)
