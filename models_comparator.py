@@ -20,10 +20,7 @@ model_1 = "gpt-3.5-turbo-0125"
 model_2 = "gpt-4"
 model_3 = "gpt-4-0125-preview"
 
-cost = [0.0015, 0.06, 0.03] #https://openai.com/pricing
-cost_1 = 0.0015 
-cost_2 = 0.06
-cost_3 = 0.03
+cost_vector = [0.0015, 0.06, 0.03] #https://openai.com/pricing
 
 #------------------------Function Definition-----------------------
 
@@ -112,15 +109,15 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
   #st.session_state.prompt = ""
   #st.session_state.context = "You are an helpful assistant"
 
-def plot_average(lists):
-  averages = [sum(lst) / len(lst) for lst in lists]
-  fig, ax = plt.subplots()
-  ax = plt.bar(range(len(lists)), averages, tick_label=[f'List {i+1}' for i in range(len(lists))])
-  plt.xlabel('Lists')
-  plt.ylabel('Average Value')
-  plt.title('Average Value for Each List')
-  st.pyplot(fig)
-
+def plot_average(lists, cost_vector):
+    weighted_lists = [[value * cost for value, cost in zip(lst, cost_vector)] for lst in lists]
+    weighted_averages = [sum(weights) / len(weights) for weights in weighted_lists]
+    fig, ax = plt.subplots()
+    ax.bar(range(len(lists)), weighted_averages, tick_label=[f'List {i+1}' for i in range(len(lists))])
+    plt.xlabel('Lists')
+    plt.ylabel('Weighted Average Value')
+    plt.title('Weighted Average Value for Each List')
+    st.pyplot(fig)
 
 
 #--------------------------Temporaty Storing-------------------------
@@ -265,7 +262,7 @@ def main():
           #st.divider()
           #st.subheader("Send me feedbacks :exclamation:")
           #st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
-          plot_average([st.session_state['token_1_list'],st.session_state['token_2_list'],st.session_state['token_3_list']])
+          plot_average([st.session_state['token_1_list'],st.session_state['token_2_list'],st.session_state['token_3_list']], cost_vector)
 
         with coln:
           st.subheader("Your preferences :thumbsup::thumbsdown:")
