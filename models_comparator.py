@@ -291,13 +291,13 @@ def main():
         with c1:
           st.subheader("Why this application :question:")
           st.markdown("Are you a **developer** looking for **integrating a GPT model** in your application? Have you ever wondered what the main differences are among them? Choosing the right model can be a bit overwhelming. Use this application to compare the results from different models and see the differences for yourself. Yes, but **make sure to check out the documentation** afterward! 😊")
+            st.subheader("Pay attention to this :zap:")
+          st.markdown("Please be mindful of the fact that **any queries you submit will be stored** in an anonymized manner, exclusively for research and training purposes. It is imperative to note that under no circumstances should you incorporate or divulge any **confidential or sensitive information** in your interactions. Your cooperation in this regard ensures the integrity of our commitment to privacy and data security")
+   
+        with c2:
+        #st.info("Please be aware that your queries will be stored anonymously for research and training purposes. Under no circumstances should you insert confidential information.", icon = "⚠️")
           st.subheader("The process :three_button_mouse:")
           st.image("process_image.png")
-        with c2:
-          st.subheader("Pay attention to this :zap:")
-          st.markdown("Please be mindful of the fact that **any queries you submit will be stored** in an anonymized manner, exclusively for research and training purposes. It is imperative to note that under no circumstances should you incorporate or divulge any **confidential or sensitive information** in your interactions. Your cooperation in this regard ensures the integrity of our commitment to privacy and data security")
-          #st.info("Please be aware that your queries will be stored anonymously for research and training purposes. Under no circumstances should you insert confidential information.", icon = "⚠️")
-        
           st.subheader("Send me feedbacks :exclamation:")
           st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
 
