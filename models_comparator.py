@@ -299,7 +299,7 @@ def main():
         with c2:
         #st.info("Please be aware that your queries will be stored anonymously for research and training purposes. Under no circumstances should you insert confidential information.", icon = "⚠️")
           st.subheader("The process :three_button_mouse:")
-          st.image("processes_img.png")
+          st.image("processes.png")
           
 
 if __name__ == '__main__':
