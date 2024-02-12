@@ -287,7 +287,7 @@ def main():
             st.pyplot(fig1)
 
       with tabInfo:
-        st.subheader("Why this application?")
+        st.subheader("Why this application?:question_mark:")
         st.markdown("Are you a **developer** looking for **integrating a GPT model** in your application? Have you ever wondered what the main differences are among them? Choosing the right model can be a bit overwhelming. Use this application to compare the results from different models and see the differences for yourself. Yes, but **make sure to check out the documentation** afterward! 😊")
           
         st.write("**1)** Type your prompt, set up role system and gpt parameters :pencil:")
