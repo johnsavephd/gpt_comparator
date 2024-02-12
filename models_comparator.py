@@ -106,7 +106,7 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
   st.session_state.gpt35love = False
   st.session_state.gpt40love = False
   st.session_state.gpt41love = False
-  #st.session_state.prompt = ""
+  st.session_state.prompt = ""
   #st.session_state.context = "You are an helpful assistant"
 
 def plot_average(lists, cost_vector,model_1, model_2, model_3):
