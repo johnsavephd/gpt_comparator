@@ -109,13 +109,13 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
   #st.session_state.prompt = ""
   #st.session_state.context = "You are an helpful assistant"
 
-def plot_average(lists, cost_vector):
+def plot_average(lists, cost_vector,model_1, model_2, model_3):
     # Calculate the weighted averages for each list
     weighted_averages = [sum(lst) / len(lst) * cost for lst, cost in zip(lists, cost_vector)]
 
     # Create a bar chart
     fig, ax = plt.subplots()
-    bars = ax.bar(range(len(lists)), weighted_averages, tick_label=[f'List {i+1}' for i in range(len(lists))])
+    bars = ax.bar(range(len(lists)), weighted_averages, tick_label=[model_1, model_2, model_3])
 
     # Add labels to the bars
     for bar, value in zip(bars, weighted_averages):
@@ -127,10 +127,6 @@ def plot_average(lists, cost_vector):
     ax.spines['right'].set_visible(False)
     ax.spines['left'].set_visible(False)
     ax.spines['bottom'].set_visible(False)
-
-    plt.xlabel('Lists')
-    plt.ylabel('Weighted Average Value')
-    plt.title('Weighted Average Value for Each List')
     
     # Display the plot without y-axis ticks
     plt.tick_params(axis='y', which='both', left=False, right=False, labelleft=False)
@@ -280,7 +276,7 @@ def main():
           #st.divider()
           #st.subheader("Send me feedbacks :exclamation:")
           #st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
-          plot_average([st.session_state['token_1_list'],st.session_state['token_2_list'],st.session_state['token_3_list']], cost_vector)
+          plot_average([st.session_state['token_1_list'],st.session_state['token_2_list'],st.session_state['token_3_list']], cost_vector, model_1, model_2, model_3)
           
         with coln:
           st.subheader("Your preferences :thumbsup::thumbsdown:")
