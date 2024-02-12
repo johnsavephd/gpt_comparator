@@ -227,7 +227,7 @@ def main():
         "#"
       
       st.info(answer_gpt35['content'], icon=None)
-      st.checkbox(key = "gpt35love", label="I prefer GPT-3.5-turbo answer", on_change = write_postgres, args=(prompt, context, temperature, top_p, max_tokens, model_1, model_2, model_3, answer_gpt35['content'], answer_gpt40['content'], answer_gpt40_125['content'], tokens_gpt35, tokens_gpt40, tokens_gpt40_125, True, False, False,))
+      st.checkbox(key = "gpt35love", label="I prefer gpt-3.5-turbo answer", on_change = write_postgres, args=(prompt, context, temperature, top_p, max_tokens, model_1, model_2, model_3, answer_gpt35['content'], answer_gpt40['content'], answer_gpt40_125['content'], tokens_gpt35, tokens_gpt40, tokens_gpt40_125, True, False, False,))
       
     with col2:
       st.header("**gpt-4**")
@@ -243,7 +243,7 @@ def main():
       with coli:
         "#"  
       st.info(answer_gpt40['content'], icon=None)
-      st.checkbox(key = "gpt40love", label="I prefer GPT-4 answer", on_change = write_postgres, args=(prompt, context, temperature, top_p, max_tokens, model_1, model_2, model_3, answer_gpt35['content'], answer_gpt40['content'], answer_gpt40_125['content'], tokens_gpt35, tokens_gpt40, tokens_gpt40_125, False, True, False,))
+      st.checkbox(key = "gpt40love", label="I prefer gpt-4 answer", on_change = write_postgres, args=(prompt, context, temperature, top_p, max_tokens, model_1, model_2, model_3, answer_gpt35['content'], answer_gpt40['content'], answer_gpt40_125['content'], tokens_gpt35, tokens_gpt40, tokens_gpt40_125, False, True, False,))
 
     with col3:
       st.header("**gpt-4-0125-preview**")
