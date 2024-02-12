@@ -109,14 +109,18 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
   #st.session_state.prompt = ""
   #st.session_state.context = "You are an helpful assistant"
 
-def plot_average(lists):
-    averages = [sum(lst) / len(lst) for lst in lists]
-    fig, ax = plt.subplots()
-    ax.bar(range(len(lists)), averages, tick_label=[f'List {i+1}' for i in range(len(lists))])
-    plt.xlabel('Lists')
-    plt.ylabel('Average Value')
-    plt.title('Average Value for Each List')
+def plot_average(lists, cost_vector):
+    # Calculate the weighted averages for each list
+    weighted_averages = [sum(lst) / len(lst) * cost for lst, cost in zip(lists, cost_vector)]
 
+    # Create a bar chart
+    fig, ax = plt.subplots()
+    ax.bar(range(len(lists)), weighted_averages, tick_label=[f'List {i+1}' for i in range(len(lists))])
+    plt.xlabel('Lists')
+    plt.ylabel('Weighted Average Value')
+    plt.title('Weighted Average Value for Each List')
+    
+    # Display the plot
     st.pyplot(fig)
 
 #--------------------------Temporaty Storing-------------------------
@@ -261,8 +265,8 @@ def main():
           #st.divider()
           #st.subheader("Send me feedbacks :exclamation:")
           #st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
-          plot_average([st.session_state['token_1_list'],st.session_state['token_2_list'],st.session_state['token_3_list']])
-          st.write(float(st.session_state['token_1_list'])*cost_vector[0])
+          plot_average([st.session_state['token_1_list'],st.session_state['token_2_list'],st.session_state['token_3_list']], cost_vector)
+          
         with coln:
           st.subheader("Your preferences :thumbsup::thumbsdown:")
           love_1_perc = sum(st.session_state['love_1_list']) 
