@@ -119,6 +119,11 @@ def plot_average(lists, cost_vector):
     plt.xlabel('Lists')
     plt.ylabel('Weighted Average Value')
     plt.title('Weighted Average Value for Each List')
+
+    for bar, value in zip(bars, weighted_averages):
+        height = bar.get_height()
+        ax.text(bar.get_x() + bar.get_width() / 2, height, f'{value:.2f}', ha='center', va='bottom')
+
     
     # Display the plot
     st.pyplot(fig)
