@@ -262,7 +262,11 @@ def main():
       st.checkbox(key = "gpt41love", label="I prefer gpt-4-0125-preview answer", on_change = write_postgres, args=(prompt, context, temperature, top_p, max_tokens, model_1, model_2, model_3, answer_gpt35['content'], answer_gpt40['content'], answer_gpt40_125['content'], tokens_gpt35, tokens_gpt40, tokens_gpt40_125, False, False, True,))
 
       with tabStat:
+        love_1_perc = sum(st.session_state['love_1_list']) 
+        love_2_perc = sum(st.session_state['love_2_list']) 
+        love_3_perc = sum(st.session_state['love_3_list']) 
 
+        
         colm, coln = st.columns(2)
         with colm:
           st.subheader("Average cost for 1.000 query :money_with_wings:", help = "Here you can compare costs you will sustain for 1.000 API call")
@@ -276,14 +280,11 @@ def main():
           #st.divider()
           #st.subheader("Send me feedbacks :exclamation:")
           #st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
-          plot_average([st.session_state['token_1_list'],st.session_state['token_2_list'],st.session_state['token_3_list']], cost_vector, model_1, model_2, model_3)
+          if love_1_perc + love_2_perc + love_3_perc > 0:
+            plot_average([st.session_state['token_1_list'],st.session_state['token_2_list'],st.session_state['token_3_list']], cost_vector, model_1, model_2, model_3)
           
         with coln:
           st.subheader("Your preferences :thumbsup::thumbsdown:", help = "Here you can see your aggregated model selections")
-          love_1_perc = sum(st.session_state['love_1_list']) 
-          love_2_perc = sum(st.session_state['love_2_list']) 
-          love_3_perc = sum(st.session_state['love_3_list']) 
-          
           labels = "gpt-3.5-turbo-0125", "gpt-4", "gpt-4-0125-preview"
           sizes = [float(love_1_perc), float(love_2_perc), float(love_3_perc)]
             
