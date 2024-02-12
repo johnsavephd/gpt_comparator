@@ -253,7 +253,7 @@ def main():
 
         colm,coln = st.columns(2)
         with colm:
-          #st.subheader("Why this application :question:")
+          st.subheader("Why this application :question:")
           #st.markdown("Are you a **developer** looking for **integrating a GPT model** in your application? Have you ever wondered what the main differences are among them? Choosing the right model can be a bit overwhelming. Use this application to compare the results from different models and see the differences for yourself. Yes, but **make sure to check out the documentation** afterward! 😊")
           
           #st.write("**1)** Type your prompt, set up role system and gpt parameters :pencil:")
@@ -264,10 +264,6 @@ def main():
           #st.subheader("Send me feedbacks :exclamation:")
           #st.markdown("Please fell free to send me feedbacks or ideas to improve the app. You can find me on [linkedin](https://www.linkedin.com/in/giovanni-salvi-5aa278158/) 😊")
 
-
-
-
-        
         with coln:
           st.subheader("Your preferences :thumbsup::thumbsdown:")
           love_1_perc = sum(st.session_state['love_1_list']) 
