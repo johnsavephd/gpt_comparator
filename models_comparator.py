@@ -118,7 +118,6 @@ def plot_average(lists):
   plt.ylabel('Average Value')
   plt.title('Average Value for Each List')
   fig, ax = plt.subplots()
-  ax.scatter([1, 2, 3], [1, 2, 3])
   st.pyplot(fig)
 
 
