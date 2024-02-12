@@ -279,7 +279,7 @@ def main():
           plot_average([st.session_state['token_1_list'],st.session_state['token_2_list'],st.session_state['token_3_list']], cost_vector, model_1, model_2, model_3)
           
         with coln:
-          st.subheader("Your preferences :thumbsup::thumbsdown:")
+          st.subheader("Your preferences :thumbsup::thumbsdown:, help = "Here you can see your cumulative model selections"")
           love_1_perc = sum(st.session_state['love_1_list']) 
           love_2_perc = sum(st.session_state['love_2_list']) 
           love_3_perc = sum(st.session_state['love_3_list']) 
