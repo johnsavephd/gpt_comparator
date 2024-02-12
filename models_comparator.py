@@ -113,7 +113,7 @@ def write_postgres(user_query, system_role, temperature, top_p, max_tokens, mode
 
 def plot_average(lists):
   averages = [sum(lst) / len(lst) for lst in lists]
-  plt.bar(range(len(lists)), averages, tick_label=[f'List {i+1}' for i in range(len(lists))])
+  fig = plt.bar(range(len(lists)), averages, tick_label=[f'List {i+1}' for i in range(len(lists))])
   plt.xlabel('Lists')
   plt.ylabel('Average Value')
   plt.title('Average Value for Each List')
