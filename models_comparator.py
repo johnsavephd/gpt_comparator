@@ -269,12 +269,12 @@ def main():
         
         colm, coln = st.columns(2)
         with colm:
-          st.subheader("Average cost for 1.000 query :money_with_wings:", help = "Here you can compare costs you will sustain for 1.000 API call")
+          st.subheader("Average cost for 1.000 query :money_with_wings:", help = "Here you can compare costs you will sustain for 1.000 API calls")
           if love_1_perc + love_2_perc + love_3_perc > 0:
             plot_average([st.session_state['token_1_list'],st.session_state['token_2_list'],st.session_state['token_3_list']], cost_vector, model_1, model_2, model_3)
           
         with coln:
-          st.subheader("Your preferences :thumbsup::thumbsdown:", help = "Here you can see your aggregated model selections")
+          st.subheader("Your preferences :thumbsup::thumbsdown:", help = "Here you can see your model selections")
           labels = "gpt-3.5-turbo-0125", "gpt-4", "gpt-4-0125-preview"
           sizes = [float(love_1_perc), float(love_2_perc), float(love_3_perc)]
             
@@ -287,6 +287,7 @@ def main():
             st.pyplot(fig1)
 
       with tabInfo:
+        st.subheader("Why this application?")
         st.markdown("Are you a **developer** looking for **integrating a GPT model** in your application? Have you ever wondered what the main differences are among them? Choosing the right model can be a bit overwhelming. Use this application to compare the results from different models and see the differences for yourself. Yes, but **make sure to check out the documentation** afterward! 😊")
           
         st.write("**1)** Type your prompt, set up role system and gpt parameters :pencil:")
