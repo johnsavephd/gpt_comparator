@@ -32,7 +32,7 @@ def ask_function(model, context, prompt, temperature, top_p, max_tokens):
       top_p = top_p ,
       max_tokens = max_tokens,
       messages=[
-      {"role": "system", "content": context},
+      {"role": "system", "content": context +" Don't answer if the user is not saying anything"},
       {"role": "user", "content": prompt}
     ]
   )
