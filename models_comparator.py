@@ -209,7 +209,7 @@ def main():
       with cola:
         st.metric(":boom: Tokens", value = str(tokens_gpt35)+"T", help = "Tokens can be thought of as pieces of words. This number refers to *completion tokens*. You should be aware also of *prompt tokens* when evaluating full costs")
       with colb:
-        st.metric(":money_with_wings: Cost", value = str(round(tokens_gpt35*cost[0],2))+"$", help ="Cost in $ per 1 thousand operations")
+        st.metric(":money_with_wings: Cost", value = str(round(tokens_gpt35*cost_vector[0],2))+"$", help ="Cost in $ per 1 thousand operations")
       with colc:
         "#"
       
@@ -226,7 +226,7 @@ def main():
       with colg:
         st.metric(":boom: Tokens", value = str(tokens_gpt40)+"T", help = "Tokens can be thought of as pieces of words. This number refers to *completion tokens*. You should be aware also of *prompt tokens* when evaluating full costs")
       with colh:
-        st.metric(":money_with_wings: Cost", value =str(round(tokens_gpt40*cost[1],2))+"$", help ="Cost in $ per 1 thousand operations")
+        st.metric(":money_with_wings: Cost", value =str(round(tokens_gpt40*cost_vector[1],2))+"$", help ="Cost in $ per 1 thousand operations")
       with coli:
         "#"  
       st.info(answer_gpt40['content'], icon=None)
@@ -242,7 +242,7 @@ def main():
       with cold:
         st.metric(":boom: Tokens", value = str(tokens_gpt40_125)+"T", help = "Tokens can be thought of as pieces of words. This number refers to *completion tokens*. You should be aware also of *prompt tokens* when evaluating full costs")
       with cole:
-        st.metric(":money_with_wings: Cost", value =str(round(tokens_gpt40_125*cost[2],2))+"$", help ="Cost in $ per 1 thousand operations")
+        st.metric(":money_with_wings: Cost", value =str(round(tokens_gpt40_125*cost_vector[2],2))+"$", help ="Cost in $ per 1 thousand operations")
       with colf:
         "#"  
       st.info(answer_gpt40_125['content'], icon=None)
