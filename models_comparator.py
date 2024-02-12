@@ -297,6 +297,7 @@ def main():
           st.write("**3)** Choose the answer you prefer. A new answer will be displayed :round_pushpin:")
           st.write("**4)** Iterate the process for few times :repeat:")
           st.write("**4)** Look at the statistics in the Stat tab :bar_chart:")
+          st.image("process_image.png")
         with c2:
           st.subheader("Pay attention to this :zap:")
           st.markdown("Please be mindful of the fact that **any queries you submit will be stored** in an anonymized manner, exclusively for research and training purposes. It is imperative to note that under no circumstances should you incorporate or divulge any **confidential or sensitive information** in your interactions. Your cooperation in this regard ensures the integrity of our commitment to privacy and data security")
