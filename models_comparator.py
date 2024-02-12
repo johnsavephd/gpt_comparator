@@ -291,7 +291,7 @@ def main():
         with c1:
           st.subheader("Why this application :question:")
           st.markdown("Are you a **developer** looking for **integrating a GPT model** in your application? Have you ever wondered what the main differences are among them? Choosing the right model can be a bit overwhelming. Use this application to compare the results from different models and see the differences for yourself. Yes, but **make sure to check out the documentation** afterward! 😊")
-            st.subheader("Pay attention to this :zap:")
+          st.subheader("Pay attention to this :zap:")
           st.markdown("Please be mindful of the fact that **any queries you submit will be stored** in an anonymized manner, exclusively for research and training purposes. It is imperative to note that under no circumstances should you incorporate or divulge any **confidential or sensitive information** in your interactions. Your cooperation in this regard ensures the integrity of our commitment to privacy and data security")
    
         with c2:
