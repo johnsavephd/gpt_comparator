@@ -216,7 +216,7 @@ def main():
       st.header("**gpt-3.5-turbo-0125**")
       ":boom: 16.385 Tokens | :calendar: Up to Sep 2021"
 
-      st.markdown("The latest GPT-3.5 Turbo model with higher accuracy at responding in requested formats (working for non-chat tasks as well)")
+      st.markdown("The latest GPT-3.5 Turbo model with higher accuracy at responding in requested formats an completing tasks")
       st.link_button("Model", url="https://platform.openai.com/docs/models/gpt-3-5", help=None, type="secondary", disabled=False, use_container_width=False)
 
       cola, colb, colc = st.columns(3)
@@ -234,7 +234,7 @@ def main():
       st.header("**gpt-4**")
       ":boom: 8.192 Tokens | :calendar: Up to Sep 2021"
     
-      st.markdown("GPT-4 is a large multimodal model optimized for chat and traditional completions tasks with advanced reasoning capabilities")
+      st.markdown("GPT-4 is a large multimodal model optimized for chat and completions tasks with advanced reasoning capabilities")
       st.link_button("Model", url="https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo", help=None, type="secondary", disabled=False, use_container_width=False)
       colg, colh, coli = st.columns(3)
       with colg:
