@@ -180,7 +180,7 @@ def main():
           
   #--------------------------Title--------------------------
       
-  col1, col2 = st.columns([30,2])
+  col1, col2 = st.columns([30,5])
   with col1:
     st.title('Which GPT should I use in my application?')
   with col2:
