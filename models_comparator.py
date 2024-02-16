@@ -184,6 +184,7 @@ def main():
   with col1:
     st.title('Which GPT should I use in my application?')
   with col2:
+    "#"
     with st.spinner("Generating with gpt-3.5-turbo-0125 ..."):
       gpt35 = ask_function(model_1, context, prompt, temperature, top_p, max_tokens)
       answer_gpt35 = gpt35.choices[0].message
