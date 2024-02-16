@@ -180,19 +180,10 @@ def main():
           
   #--------------------------Title--------------------------
       
-  #col1, mid, col2 = st.columns([1,1,30])
-  #with col1:
-    
-  #  st.image('https://dwglogo.com/wp-content/uploads/2019/03/1600px-OpenAI_logo.png', width=80)
-  #with col2:
-  st.title('Which GPT should I use in my application?')
-
-  #-------------------------Main Section-------------------------
-      
-  tabMain, tabStat, tabInfo = st.tabs(["Main", "Stat", "Info"])
-
-  with tabMain:
-    
+  col1, col2 = st.columns([30,2])
+  with col1:
+    st.title('Which GPT should I use in my application?')
+  with col2:
     with st.spinner("Generating with gpt-3.5-turbo-0125 ..."):
       gpt35 = ask_function(model_1, context, prompt, temperature, top_p, max_tokens)
       answer_gpt35 = gpt35.choices[0].message
@@ -209,6 +200,15 @@ def main():
       answer_gpt40_125 = gpt40_125.choices[0].message
       tokens_gpt40_125 = gpt40_125["usage"]["completion_tokens"]
 
+
+
+  #-------------------------Main Section-------------------------
+      
+  tabMain, tabStat, tabInfo = st.tabs(["Main", "Stat", "Info"])
+
+  with tabMain:
+    
+    
     col1, col2, col3 = st.columns(3)
 
     with col1:
