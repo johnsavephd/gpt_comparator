@@ -275,16 +275,20 @@ def main():
             plot_average([st.session_state['token_1_list'],st.session_state['token_2_list'],st.session_state['token_3_list']], cost_vector, model_1, model_2, model_3)
           
         with coln:
-          st.subheader("Your preferences :thumbsup::thumbsdown:", help = "Here you can see your model selections")
-          labels = "gpt-3.5-turbo-0125", "gpt-4", "gpt-4-0125-preview"
-          sizes = [float(love_1_perc), float(love_2_perc), float(love_3_perc)]
-            
-          if love_1_perc + love_2_perc + love_3_perc > 0:
+         st.subheader("Your preferences :thumbsup::thumbsdown:", help="Here you can see your model selections")
+
+         labels = "gpt-3.5-turbo-0125", "gpt-4", "gpt-4-0125-preview"
+         sizes = [float(love_1_perc), float(love_2_perc), float(love_3_perc)]
+
+         filtered_labels = [label for label, size in zip(labels, sizes) if size > 0]
+         filtered_sizes = [size for size in sizes if size > 0]
+
+         if sum(filtered_sizes) > 0:
             fig1, ax1 = plt.subplots()
-            ax1.pie(sizes, labels=labels, autopct='%1.1f%%',
+            ax1.pie(filtered_sizes, labels=filtered_labels, autopct='%1.1f%%',
                     shadow=False, startangle=90)
-            ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-            
+            ax1.axis('equal')  # Equal aspect ratio ensures that the pie is drawn as a circle.
+        
             st.pyplot(fig1)
 
       with tabInfo:
