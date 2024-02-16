@@ -120,7 +120,7 @@ def plot_average(lists, cost_vector,model_1, model_2, model_3):
 
     for bar, value in zip(bars, weighted_averages):
         height = bar.get_height()
-        ax.text(bar.get_x() + bar.get_width() / 2, height, f'{value:.2f} €', ha='center', va='bottom')
+        ax.text(bar.get_x() + bar.get_width() / 2, height, f'{value:.2f} $', ha='center', va='bottom')
 
 
     ax.spines['top'].set_visible(False)
@@ -287,7 +287,7 @@ def main():
             fig1, ax1 = plt.subplots()
             ax1.pie(filtered_sizes, labels=filtered_labels, autopct='%1.1f%%',
                     shadow=False, startangle=90)
-            ax1.axis('equal')  # Equal aspect ratio ensures that the pie is drawn as a circle.
+            ax1.axis('equal')  
         
             st.pyplot(fig1)
 
