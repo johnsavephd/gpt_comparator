@@ -248,7 +248,7 @@ def main():
 
     with col3:
       st.header("**gpt-4-0125-preview**")
-      ":boom: 128.000 Tokens | :calendar: Up to Apr 2023"
+      ":boom: 128.000 Tokens | :calendar: Up to Dec 2023"
     
       st.markdown("GPT-4 model with reduced cases of laziness and extended context window, where the model doesn't complete the task")
       st.link_button("Model", url="https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo", help=None, type="secondary", disabled=False, use_container_width=False)
